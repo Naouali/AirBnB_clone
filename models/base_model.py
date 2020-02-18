@@ -12,9 +12,9 @@ class BaseModel:
         if kwargs != {}:
             for key in kwargs:
                 if key == "created_at":
-                    self.__dict__["created_at"] = datetime.kwargs[created_at].isoformat()
+                    self.__dict__["created_at"] = kwargs["created_at"]
                 elif key == "updated_at":
-                    self.__dict__["updated_at"] = datetime.kwargs[updated_at].isoformat()
+                    self.__dict__["updated_at"] = kwargs["updated_at"]
                 else:
                     self.__dict__[key] = kwargs[key]
         else:
