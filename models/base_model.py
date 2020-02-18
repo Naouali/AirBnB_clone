@@ -3,7 +3,7 @@
 AirBnB project class of base model
 """
 import uuid
-import datetime
+from datetime import datetime
 
 
 class BaseModel:
@@ -12,15 +12,15 @@ class BaseModel:
         if kwargs != {}:
             for key in kwargs:
                 if key == "created_at":
-                    self.__dict__ = kwargs[created_at]
+                    self.__dict__["created_at"] = datetime.kwargs[created_at].isoformat()
                 elif key == "updated_at":
-                    self.__dict__ = kwargs[updated_at]
+                    self.__dict__["updated_at"] = datetime.kwargs[updated_at].isoformat()
                 else:
-                    self.__dict__ = kwargs[key]
+                    self.__dict__[key] = kwargs[key]
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.datetime.now()
-            self.updated_at = datetime.datetime.now()
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """ str function """
@@ -29,7 +29,7 @@ class BaseModel:
 
     def save(self):
         """ save update datetime """
-        self.updated_at = datetime.datetime.now()
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """ new dict """
