@@ -9,14 +9,14 @@ import datetime
 class BaseModel:
     def __init__(self, *args, **kwargs):
         """ constructor of class model """
-        if kwargs is not None:
+        if kwargs != {}:
             for key in kwargs:
                 if key == "created_at":
-                    self.__dict__ = kwargs.created_at
+                    self.__dict__ = kwargs[created_at]
                 elif key == "updated_at":
-                    self.__dict__ = kwargs.updated_at
+                    self.__dict__ = kwargs[updated_at]
                 else:
-                    self.__dict__ = kwargs.key
+                    self.__dict__ = kwargs[key]
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.datetime.now()
