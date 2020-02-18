@@ -13,8 +13,13 @@ class BaseModel:
         self.updated_at = datetime.datetime.now()
 
     def __str__(self):
+<<<<<<< HEAD
         return "[{}] ({}) {}". \
                 format(type(self).__name__, self.id, self.__dict__)
+=======
+        return "[{}] ({}) {}" \
+        .format(type(self).__name__, self.id, self.__dict__)
+>>>>>>> b150df02e116e52428e17cb159347fb9101b0237
 
     def save(self):
         self.updated_at = datetime.datetime.now()
