@@ -5,6 +5,7 @@ write class filestorage
 
 import json
 
+
 class FileStorage:
     """ private class attributes """
     __file_path = "file.json"
